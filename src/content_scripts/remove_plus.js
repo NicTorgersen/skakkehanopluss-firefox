@@ -118,16 +118,16 @@
             parent_nodes = getSiteElements(site),
             count = parent_nodes.count
 
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
             type: 'notifyRemove', url: site, objectsFound: count
         })
 
         for (var i = 0; i < parent_nodes.elements.length; i++) {
             if (parent_nodes.elements[i].length > 0 && typeof parent_nodes.elements[i] !== 'undefined') {
-                var currentElement = parent_nodes.elements[i],
-                    cachedHeight = currentElement.height(),
-                    cachedWidth = currentElement.width()
+                var currentElement = parent_nodes.elements[i]
 
+                //  cachedHeight = currentElement.height(),
+                //  cachedWidth = currentElement.width()
                 // currentElement.empty()
                 // currentElement.css({
                 //     'height': cachedHeight,
